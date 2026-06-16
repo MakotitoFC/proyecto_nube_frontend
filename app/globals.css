@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* Configuración básica de Tailwind */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Por defecto todo es Montserrat */
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* React Datepicker Custom Styles */
+.react-datepicker__header {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day--in-range,
+.react-datepicker__day--in-selecting-range {
+  background-color: #07A0A2 !important;
+  color: white !important;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--in-range:hover {
+  background-color: #068587 !important;
+}
+
+/* --- CLASES OBLIGATORIAS (Manuales) --- */
+
+/* Clase para WindSong (Manuscrita) */
+.font-secundaria {
+  /* Usamos !important temporalmente para asegurar que nada lo sobrescriba */
+  font-family: var(--font-windsong), cursive !important;
+}
+
+/* Clase para Montserrat (Principal) */
+.font-principal {
+  font-family: var(--font-montserrat), sans-serif !important;
+}
+
+/* Clase para Oswald (Terciaria/Headings) */
+.font-tertiary {
+  font-family: var(--font-oswald), sans-serif !important;
+}
+
+/* Clases de peso */
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Utilities */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Scrollbar Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
